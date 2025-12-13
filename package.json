@@ -1,7 +1,7 @@
 {
   "name": "discord-bot",
-  "type": "module",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "bun run ./src/index.ts",
     "build": "NODE_ENV=production bun build --minify --compile ./src/index.ts --outfile=dist/bot",
@@ -10,13 +10,13 @@
     "start": "./dist/bot",
     "format": "bunx oxfmt --list-different || bunx oxfmt"
   },
-  "devDependencies": {
-    "@types/bun": "^1.3.3",
-    "oxfmt": "^0.16.0",
-    "typescript": "^5.9.3"
-  },
   "dependencies": {
     "discord.js": "^14.25.1",
-    "websim": "^0.0.6"
+    "websim": "^0.0.8"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.4",
+    "oxfmt": "^0.18.0",
+    "typescript": "^5.9.3"
   }
 }

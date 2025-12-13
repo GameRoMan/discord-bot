@@ -1,11 +1,11 @@
 import type { CacheType, ChatInputCommandInteraction } from "discord.js";
 
-import { api } from "websim";
+import { getFeedTrending } from "websim";
 
 async function findRandomWebsimProject() {
   const offset = Math.floor(Math.random() * 1e5);
-  const projects = await api.feed.getTrending({ limit: 2, offset, range: "all" });
-  const randomProject = projects.feed.data[0];
+  const { feed } = await getFeedTrending({ limit: 2, offset, range: "all" });
+  const randomProject = feed.data[0];
   if (!randomProject) return null;
   const websimProjectURL = `https://websim.com${randomProject.site.link_url}`;
   return websimProjectURL;
