@@ -1,7 +1,7 @@
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      DISCORD_BOT_TOKEN?: string;
+      readonly DISCORD_BOT_TOKEN?: string;
     }
   }
 }
